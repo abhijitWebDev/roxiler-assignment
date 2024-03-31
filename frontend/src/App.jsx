@@ -3,6 +3,7 @@ import axios from 'axios';
 import TransactionsTable from './components/TransactionsTable';
 // import StatisticsBox from './components/StatisticsBox';
 import BarChart from './components/Barchart';
+import './App.css';
 
 function App() {
   const [data, setData] = useState([]);
@@ -109,10 +110,11 @@ const handlePageChange = (e) => {
       <TransactionsTable data={data} />
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
   <div>
-    <button onClick={handlePageChange}>Previous</button>
-    <button onClick={handlePageChange}>Next</button>
+    <button className="btn1" onClick={handlePageChange}>Previous</button>
+    <button className="btn2" onClick={handlePageChange}>Next</button>
   </div>
   <p>page: {page}</p>
+  <p>per-page: {perPage}</p>
 </div>
      
       {/* <BarChart data={barChartData} /> */}
