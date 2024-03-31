@@ -18,7 +18,7 @@ This project is a backend application for the Roxiler Assignment. It provides th
 ## Usage
 1. Start the server: `npm start`    
 2. Access the application at: `http://localhost:4000` for backend
-3 Access application at: `http:localhost:5173` for front end. 
+3 Access application at: `http://localhost:5173` for front end. 
 
 
 
