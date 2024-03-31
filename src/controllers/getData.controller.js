@@ -40,10 +40,12 @@ transactions
 records of that page number
 - Default pagination values will be like page = 1, per page = 10
  */
+
+ const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const getTransactions = async (req, res) => {
   console.log("getTransactions", req.query);
   try {
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+   
     let { page = 1, perPage = 10, search = "", month="March" } = req.query;
     page = parseInt(page);
     perPage = parseInt(perPage);
@@ -136,11 +138,11 @@ const getStatistics = async (req,res) => {
 
     res.send({ totalSaleAmount, totalSoldItems, totalNotSoldItems });
 
-    return {
-      totalSaleAmount: totalSaleAmount[0].totalSaleAmount,
-      totalSoldItems: totalSoldItems[0].totalSoldItems,
-      totalNotSoldItems: totalNotSoldItems[0].totalNotSoldItems,
-    };
+    // return {
+    //   totalSaleAmount: totalSaleAmount[0].totalSaleAmount,
+    //   totalSoldItems: totalSoldItems[0].totalSoldItems,
+    //   totalNotSoldItems: totalNotSoldItems[0].totalNotSoldItems,
+    // };
   } catch (error) {
     console.error("Error in getStatistics", error);
     throw error;

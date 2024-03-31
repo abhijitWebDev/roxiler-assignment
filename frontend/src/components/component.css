@@ -1,0 +1,13 @@
+.myTable {
+    border: 1px solid black;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .myTable th, .myTable td {
+    padding: 10px;
+  }
+  
+  .myTable thead tr {
+    background-color: #f2f2f2;
+  }

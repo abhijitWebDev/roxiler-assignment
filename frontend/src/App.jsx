@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TransactionsTable from './components/TransactionsTable';
 // import StatisticsBox from './components/StatisticsBox';
-// import BarChart from './components/Barchart';
+import BarChart from './components/Barchart';
 
 function App() {
   const [data, setData] = useState([]);
-  const [month, setMonth] = useState('');
+  const [month, setMonth] = useState('March');
   const [search, setSearch] = useState('');
-  const [page, setPage] = useState(3);
+  const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
+  const [barChartData, setBarChartData] = useState([]);
   // const [statistics, setStatistics] = useState([]);
   // const [barChartData, setBarChartData] = useState([]);
 
@@ -54,10 +55,14 @@ function App() {
   //         month,
   //       },
   //     });
-  //     setBarChartData(result.data);
+  //     console.log('result', result.data.barChart);
+  //     setBarChartData(result.data.barChart);
+  //     console.log('barChartData', barChartData);
   //   };
   //   fetchBarChartData();
-  // }, []);
+  // }, [month]);
+  
+  
 
   // const options = [
   //   'January',
@@ -90,7 +95,7 @@ const handlePageChange = (e) => {
 
   return (
     <>
-      <h1>Hello from frontend</h1>
+      <h1>Welcome to Product catalog</h1>
       {/* <select value={month} onChange={(e) => setMonth(e.target.value)}>
         {options.map((option) => (
           <option key={option} value={option}>
@@ -98,7 +103,8 @@ const handlePageChange = (e) => {
           </option>
         ))}
       </select> */}
-      <input value={search} onChange={(e) => setSearch(e.target.value)} />
+      <h2>Search</h2>
+      <input value={search} onChange={(e) => setSearch(e.target.value)} style={{marginBottom: '20px'}} />
       {/* <StatisticsBox data={statistics} /> */}
       <TransactionsTable data={data} />
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>

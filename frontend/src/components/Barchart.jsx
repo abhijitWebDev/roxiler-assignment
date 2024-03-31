@@ -3,6 +3,7 @@ import React from 'react'
 import { Bar } from 'react-chartjs-2';
 
 const Barchart = ({data}) => {
+  console.log('data', data);
     const chartData = {
         labels: data.map((item) => item.priceRange),
         datasets: [
